@@ -1,45 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html long="en">
 
-      <head>
-         <title>Calculadora de IMC</title>
-         <script type="text/javascript">
-            const calculaImc  = ( ) => {
-                const altura = document.imcForm.elements["altura"].value;
-                const peso = document.imcForm.elements["peso"].value;
+<head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initia" />
+     <title>Animation With CSS</title>
+     
+     <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            animation: squareToCircle 2s 1s infinite alternate;
+        }
+        @keyframes squareToCircle {
+            0%{
+                border-radius: 0 0 0 0;
+                background: coral;
+                transform: rotate(0deg);
+            }
+            25%{
+                border-radius: 50% 0 0 0;
+                background: darksalmon;
+                transform: rotate(45deg);
+            }
+            50%{
+                border-radius: 50% 50% 0 0;
+                background: indianred;
+                transform: rotate(90deg);
+            }
+            75%{
+                border-radius: 50% 50% 50% 0;
+                background: lightcoral;
+                transform: rotate(135deg);
+            }
+            100%{
+                border-radius: 50% 50% 50% 50;
+                background: darksalmon;
+                transform: rotate(180deg);
+            }
+        }
+     </style>
+</head>
 
-                const imc = peso / (altura * altura) ;
-
-                if(imc< 18.5){
-                    alert("Você está abaixo do peso");
-                }
-                else if(imc >= 18.5 && imc < 25){
-                    alert("Você está com o peso normal");
-                }
-                else if(imc >= 25 && imc < 30){
-                    alert("Você está com sobrepeso");
-                }
-                else if(imc >= 30 && imc < 40){
-                    alert("Você está com obesidade");
-                }
-                else if( imc >=40){
-                    alert("Você está com obesidade grave");
-                }
-              }
-         </script>
-      </head>
-
-      <body>
-        <form id="imcForm" name="imcForm" action="#">
-            <label for="altura">Insira a altura</label>
-            <input type="text" id="altura" name="altura">
-            <br>
-
-            <label for="apeso">Insira o peso</label>
-            <input type="text" id="peso"   name="peso">
-            <br>
-
-            <input type="submit" value="Calcular" onclick="calculaImc()">
-        </form>
-      </body>
+<body>
+    <div></div>
+</body>
 </html>
